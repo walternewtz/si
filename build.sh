@@ -14,7 +14,7 @@ export SKIP_BOOTJAR_CHECKS=true
 export _JAVA_OPTIONS="-Xmx12g"
 
 make bacon -j30 &
-sleep 75m
+sleep 70m
 kill %1
 
 # upload rom
