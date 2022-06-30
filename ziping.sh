@@ -32,7 +32,7 @@ function upload_ccache() {
 function upload() {
    enviroment
    if ! [ -a "$JOS" ]; then
-     Uploading Cache ...
+     msg Uploading Cache ...
      upload_ccache
    fi
    upload_rom
