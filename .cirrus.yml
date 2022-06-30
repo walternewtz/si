@@ -1,14 +1,14 @@
 env:
-  rcloneconfig: "ENCRYPTED[48c98d76c7265c99472bf288f3850423d1170fadb01c7a5e43f2e17caafa7b9cbbb7c6fab8cd1b6e3b3056734d15fbfe]"
+  rcloneconfig: "ENCRYPTED[ce190574d09fc762d05469f792e43e9f9fd34d7bd1a73f587f07d8861d90f6dff562d72c8c14fe00b6aa126d7679b661]"
   WORKDIR: "/tmp/cirrus-ci-build"
-  EMAIL: "ENCRYPTED[abc4f02f1d94a9c1abc299cacdfcd13473aa18211be7cc54d85a5b953443510534073d4c91ef4a6a5139bc3a8b962434]"
+  EMAIL: "ENCRYPTED[b3869b3e0664d040f4a10e5237d993a8c578801ea5228ad0fc684d6e196c47219c4fab76c6df0bf7ffd7159b1a574080]"
   CIRRUS_CLONE_DEPTH: "1"
 
 
 task:
   name: "Setting Up, Syncing, Building and Uploading"
   only_if: $CIRRUS_REPO_OWNER == 'greengreen2212'
-  timeout_in: 260m
+  timeout_in: 120m
   container:
     image: greengreen2212/ubuntu:21.10
     cpu: 8
