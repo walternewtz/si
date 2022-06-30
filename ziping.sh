@@ -12,7 +12,7 @@ function enviroment() {
 
 function upload_rom() {
    msg Uploading ROM ...
-   rclone copy --drive-chunk-size 256M --include *.zip --stats 1s $JOS rom:rom/$name_rom -P
+   rclone copy --drive-chunk-size 256M --include /*.zip --stats 1s $JOS rom:rom/$name_rom -P
    msg ROM Uploaded Succesfully ...
 }
 
