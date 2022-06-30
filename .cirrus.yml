@@ -99,4 +99,6 @@ task:
      - ccache -s
 
   Upload-build_script:
+     - cd $WORKDIR
+     - chmod u+r+x ziping.sh
      - ./ziping.sh
