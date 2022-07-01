@@ -7,12 +7,13 @@ msg() {
 function enviroment() {
    device=$(grep unch $CIRRUS_WORKING_DIR/build.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
    name_rom=$(grep init $CIRRUS_WORKING_DIR/build.sh -m 1 | cut -d / -f 4)
-   JOS=$WORKDIR/rom/$name_rom/out/target/product/$device/
+   JOS=$WORKDIR/rom/$name_rom/out/target/product/$device/*.zip
+   SEN=$WORKDIR/rom/$name_rom/out/target/product/$device/
 }
 
 function upload_rom() {
    msg Uploading ROM ...
-   rclone copy --drive-chunk-size 256M --include /*.zip --stats 1s $JOS rom:rom/$name_rom -P
+   rclone copy --drive-chunk-size 256M --include /*.zip --stats 1s $SEN rom:rom/$name_rom -P
    msg ROM Uploaded Succesfully ...
 }
 
