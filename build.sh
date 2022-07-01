@@ -11,9 +11,8 @@ export BUILD_USERNAME=beryllium
 export BUILD_HOSTNAME=userdebug
 export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
-export _JAVA_OPTIONS="-Xmx6g"
 
-make bacon -j20 #&
+make bacon -j30 #&
 #sleep 70m
 #kill %1
 
