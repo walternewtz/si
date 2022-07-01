@@ -13,7 +13,7 @@ export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
 export _JAVA_OPTIONS="-Xmx10g"
 
-make bacon -j30 &
+make bacon -j20 &
 sleep 70m
 kill %1
 
