@@ -7,7 +7,7 @@ msg() {
 function enviroment() {
    device=$(grep unch $CIRRUS_WORKING_DIR/build.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
    name_rom=$(grep init $CIRRUS_WORKING_DIR/build.sh -m 1 | cut -d / -f 4)
-   JOS=$WORKDIR/rom/$name_rom/out/target/product/$device/
+   JOS=$WORKDIR/rom/$name_rom/out/target/product/$device/*.zip
 }
 
 function upload_rom() {
