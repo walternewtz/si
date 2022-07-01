@@ -15,6 +15,11 @@ export SKIP_BOOTJAR_CHECKS=true
 make bacon -j30 #&
 #sleep 70m
 #kill %1
+if [ ! -e out/target/product/*/*2022*.zip ]; then # you don't have to run this you're not facing oom kill issue while build is about 98-98%
+	        make bacon -j30 # re-run the build cuz there's still time left considering only few targets left
+        fi		
+
+
 
 # upload rom
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
