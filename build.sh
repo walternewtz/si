@@ -17,7 +17,7 @@ export SKIP_BOOTJAR_CHECKS=true
 #kill %1
 
 #trying to fix oom container error
-while ! [ -f /out/target/product/beryllium/*bery*.zip ] ;
+while ! [ -f /out/target/product/beryllium/*.zip ] ;
 do
       make bacon -j30
       sleep 5
