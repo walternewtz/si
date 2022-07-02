@@ -12,9 +12,16 @@ export BUILD_HOSTNAME=user
 export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
 
-make bacon -j30 #&
+#make bacon -j30 #&
 #sleep 80m
 #kill %1
+
+#trying to fix oom container error
+while ! [ -f /out/target/product/beryllium/*bery*.zip ] ;
+do
+      make bacon -j30
+      sleep 5
+done
 
 # upload rom
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
