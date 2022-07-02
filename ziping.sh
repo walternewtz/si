@@ -31,7 +31,7 @@ function upload_ccache() {
 
 function upload() {
    enviroment
-   if ! [ -a "$JOS" ]; then
+   if [ ! -e "$JOS" ]; then
      msg Uploading Cache ...
      upload_ccache
    fi
