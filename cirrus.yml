@@ -10,7 +10,7 @@ task:
   only_if: $CIRRUS_REPO_OWNER == 'greengreen2212'
   timeout_in: 260m
   container:
-    image: panchajanya1999/archlinux:latest
+    image: greengreen2212/ubuntu:16
     cpu: 8
     memory: 32G
 
