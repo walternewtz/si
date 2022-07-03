@@ -15,10 +15,11 @@ export SKIP_BOOTJAR_CHECKS=true
 make bacon -j30 #&
 #sleep 70m
 #kill %1
-if [ ! -e out/target/product/*/*2022*.zip ]; then # you don't have to run this you're not facing oom kill issue while build is about 98-98%
-	        make bacon -j30 # re-run the build cuz there's still time left considering only few targets left
-        fi		
-
+until [ $? == 0 ] ;
+do
+    sleep 10
+    make bacon -j30
+done
 
 
 # upload rom
