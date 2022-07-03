@@ -12,13 +12,13 @@ export BUILD_HOSTNAME=userdebug
 export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
 
-make bacon -j30 #&
+mka bacon -j30 #&
 #sleep 75m
 #kill %1
 until [ $? == 0 ] ;
 do
    sleep 10
-   make bacon -j30
+   mka bacon -j30
 done
 
 
