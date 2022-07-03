@@ -12,18 +12,25 @@ export BUILD_HOSTNAME=user
 export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
 
-#make bacon -j30 #&
+#
+make bacon -j30 #&
 #sleep 80m
 #kill %1
 
-#trying to fix oom container error
-until [ -f /$WORKDIR/rom/$name_rom/out/target/product/beryllium/*.zip ] ;
+until [ $? == 0 ] ;
 do
-      make bacon -j30
-      sleep 10
-      echo ROM building complete
+    sleep 10
+    make bacon -j30
 done
-      echo move to other task
+
+#trying to fix oom container error
+#until [ -f /$WORKDIR/rom/$name_rom/out/target/product/beryllium/*.zip ] ;
+#do
+     # make bacon -j30
+    #  sleep 10
+     # echo ROM building complete
+#done
+      #echo move to other task
 
 
 # upload rom
