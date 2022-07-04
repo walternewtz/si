@@ -1,6 +1,6 @@
 #sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android -b 11.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/walternewtz/local_manifest.git --depth 1 -b crdroid11.0 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android -b 12.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/walternewtz/local_manifest.git --depth 1 -b crdroid12.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j10
 
 #build 
@@ -11,17 +11,18 @@ export BUILD_USERNAME=beryllium
 export BUILD_HOSTNAME=user
 export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 
 #
-make bacon -j30 #&
-#sleep 80m
-#kill %1
+make bacon -j30 &
+sleep 80m
+kill %1
 
-until [ $? == 0 ] ;
-do
-    sleep 10
-    make bacon -j30
-done
+#until [ $? == 0 ] ;
+#do
+    #sleep 10
+   # make bacon -j30
+#done
 
 #trying to fix oom container error
 #until [ -f /$WORKDIR/rom/$name_rom/out/target/product/beryllium/*.zip ] ;
