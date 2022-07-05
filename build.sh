@@ -13,15 +13,15 @@ export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
 
 #
-make bacon -j30 &
-sleep 80m
-kill %1
+make bacon -j30 #&
+#sleep 80m
+#kill %1
 
-#until [ $? == 0 ] ;
-#do
-    #sleep 10
-   # make bacon -j30
-#done
+until [ $? == 0 ] ;
+do
+    sleep 10
+    make bacon -j30
+done
 
 #trying to fix oom container error
 #until [ -f /$WORKDIR/rom/$name_rom/out/target/product/beryllium/*.zip ] ;
