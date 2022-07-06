@@ -13,14 +13,14 @@ export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
 
 #
-make bacon -j10 #&
+make bacon -j30 #&
 #sleep 65m
 #kill %1
 
 until [ $? == 0 ] ;
 do
    sleep 10
-   make bacon -j10
+   make bacon -j30
 done
 
 #trying to fix oom container error
