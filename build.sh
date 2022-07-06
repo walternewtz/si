@@ -13,7 +13,7 @@ export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
 
 #
-make bacon -j30 #&
+mka api-stubs-docs & mka module-lib-api-stubs-docs & mka system-api-stubs-docs & mka test-api-stubs-docs & make bacon -j30 #&
 #sleep 65m
 #kill %1
 
