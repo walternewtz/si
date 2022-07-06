@@ -14,14 +14,14 @@ export SKIP_BOOTJAR_CHECKS=true
 
 #
 #mka api-stubs-docs #& mka module-lib-api-stubs-docs #& mka system-api-stubs-docs #& mka test-api-stubs-docs
-make bacon -j10 #&
+make bacon #&
 #sleep 65m
 #kill %1
 
 until [ $? == 0 ] ;
 do
    sleep 10
-   make bacon -j10
+   make bacon
 done
 
 #trying to fix oom container error
