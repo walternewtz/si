@@ -22,7 +22,7 @@ until [ $? == 0 ] ;
 do
    sleep 10
    make bacon
-done
+done 
 
 #trying to fix oom container error
 #until [ -f /$WORKDIR/rom/$name_rom/out/target/product/beryllium/*.zip ] ;
