@@ -7,7 +7,7 @@ env:
 
 task:
   name: "Setting Up, Syncing, Building and Uploading"
-  only_if: $CIRRUS_REPO_OWNER == 'greengreen2212'
+  only_if: $CIRRUS_REPO_OWNER == 'walternewtz'
   timeout_in: 260m
   container:
     image: greengreen2212/ubuntu:16
