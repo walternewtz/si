@@ -8,7 +8,7 @@ env:
 task:
   name: "Setting Up, Syncing, Building and Uploading"
   only_if: $CIRRUS_REPO_OWNER == 'walternewtz'
-  timeout_in: 260m
+  timeout_in: 120m
   container:
     dockerfile: Dockerfile
     cpu: 8
